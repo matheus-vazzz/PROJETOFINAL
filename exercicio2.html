@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Área e Perímetro do Quadrado</title>
+    <script>
+        function calcular() {
+            const lado = parseFloat(document.getElementById('lado').value);
+
+            const area = lado * lado;
+            const perimetro = 4 * lado;
+
+            document.getElementById('resultado').innerHTML = `
+                Área: ${area} unidades² <br>
+                Perímetro: ${perimetro} unidades
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cálculo de Área e Perímetro do Quadrado</h1>
+    <label for="lado">Lado:</label>
+    <input type="number" id="lado" required>
+    <br>
+    <button onclick="calcular()">Calcular</button>
+    <h2>Resultados:</h2>
+    <div id="resultado"></div>
+</body>
+</html>
