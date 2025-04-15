@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Área e Perímetro do Retângulo</title>
+    <script>
+        function calcular() {
+            const base = parseFloat(document.getElementById('base').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+
+            const area = base * altura;
+            const perimetro = 2 * (base + altura);
+
+            document.getElementById('resultado').innerHTML = `
+                Área: ${area} unidades² <br>
+                Perímetro: ${perimetro} unidades
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cálculo de Área e Perímetro do Retângulo</h1>
+    <label for="base">Base:</label>
+    <input type="number" id="base" required>
+    <br>
+    <label for="altura">Altura:</label>
+    <input type="number" id="altura" required>
+    <br>
+    <button onclick="calcular()">Calcular</button>
+    <h2>Resultados:</h2>
+    <div id="resultado"></div>
+</body>
+</html>
