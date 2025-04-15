@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Área e Perímetro da Circunferência</title>
+    <script>
+        function calcular() {
+            const raio = parseFloat(document.getElementById('raio').value);
+
+            const area = Math.PI * Math.pow(raio, 2);
+            const perimetro = 2 * Math.PI * raio;
+
+            document.getElementById('resultado').innerHTML = `
+                Área: ${area.toFixed(2)} unidades² <br>
+                Perímetro: ${perimetro.toFixed(2)} unidades
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cálculo de Área e Perímetro da Circunferência</h1>
+    <label for="raio">Raio:</label>
+    <input type="number" id="raio" required>
+    <br>
+    <button onclick="calcular()">Calcular</button>
+    <h2>Resultados:</h2>
+    <div id="resultado"></div>
+</body>
+</html>
