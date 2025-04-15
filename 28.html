@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Vogal ou Consoante</title>
+    <script>
+        function verificarLetra() {
+            // Obtém o valor do input
+            var letra = document.getElementById("letra").value.toLowerCase(); // Converte para minúscula
+
+            // Verifica se é uma letra e se é vogal ou consoante
+            if (letra.length === 1 && /^[a-zA-Z]$/.test(letra)) {
+                if ("aeiou".includes(letra)) {
+                    document.getElementById("resultado").innerHTML = "A letra '" + letra + "' é uma vogal.";
+                } else {
+                    document.getElementById("resultado").innerHTML = "A letra '" + letra + "' é uma consoante.";
+                }
+            } else {
+                document.getElementById("resultado").innerHTML = "Por favor, insira apenas uma letra.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificador de Vogal ou Consoante</h1>
+    <label for="letra">Digite uma letra:</label>
+    <input type="text" id="letra" maxlength="1" required>
+    <br><br>
+    <button onclick="verificarLetra()">Verificar</button>
+    <p id="resultado"></p>
+</body>
+</html>
