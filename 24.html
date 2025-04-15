@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior entre Três Números</title>
+    <script>
+        function encontrarMaior() {
+            // Obtém os valores dos inputs
+            var numero1 = parseFloat(document.getElementById("numero1").value);
+            var numero2 = parseFloat(document.getElementById("numero2").value);
+            var numero3 = parseFloat(document.getElementById("numero3").value);
+            var maior;
+
+            // Verifica qual número é o maior
+            if (numero1 >= numero2 && numero1 >= numero3) {
+                maior = numero1;
+            } else if (numero2 >= numero1 && numero2 >= numero3) {
+                maior = numero2;
+            } else {
+                maior = numero3;
+            }
+
+            // Exibe o resultado
+            document.getElementById("resultado").innerHTML = "O maior número é: " + maior;
+        }
+    </script>
+</head>
+<body>
+    <h1>Encontrar o Maior Número</h1>
+    <label for="numero1">Digite o primeiro número:</label>
+    <input type="number" id="numero1" required>
+    <br><br>
+    <label for="numero2">Digite o segundo número:</label>
+    <input type="number" id="numero2" required>
+    <br><br>
+    <label for="numero3">Digite o terceiro número:</label>
+    <input type="number" id="numero3" required>
+    <br><br>
+    <button onclick="encontrarMaior()">Encontrar Maior</button>
+    <p id="resultado"></p>
+</body>
+</html>
