@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantidade de Dias do Mês</title>
+    <script>
+        function diasNoMes() {
+            var mes = parseInt(document.getElementById("mes").value);
+            var ano = new Date().getFullYear(); // Obtém o ano atual
+            var dias;
+
+            // Verifica a quantidade de dias com base no mês
+            if (mes === 2) {
+                // Verifica se o ano é bissexto
+                dias = (ano % 4 === 0 && (ano % 100 !== 0 || ano % 400 === 0)) ? 29 : 28;
+            } else if ([4, 6, 9, 11].includes(mes)) {
+                dias = 30;
+            } else if (mes >= 1 && mes <= 12) {
+                dias = 31;
+            } else {
+                dias = "Mês inválido!";
+            }
+
+            // Exibe o resultado
+            document.getElementById("resultado").innerHTML = "O mês " + mes + " tem " + dias + " dias.";
+        }
+    </script>
+</head>
+<body>
+    <h1>Quantidade de Dias do Mês</h1>
+    <label for="mes">Digite o número do mês (1-12):</label>
+    <input type="number" id="mes" min="1" max="12" required>
+    <br><br>
+    <button onclick="diasNoMes()">Verificar Dias</button>
+    <p id="resultado"></p>
+</body>
+</html>
