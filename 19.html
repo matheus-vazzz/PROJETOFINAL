@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Raiz de uma Equação do Primeiro Grau</title>
+    <script>
+        function calcularRaiz() {
+            // Obtém os valores de a e b
+            var a = parseFloat(document.getElementById("coeficienteA").value);
+            var b = parseFloat(document.getElementById("coeficienteB").value);
+            var resultado;
+
+            // Verifica se a é diferente de zero
+            if (a === 0) {
+                resultado = "O coeficiente 'a' não pode ser zero em uma equação do primeiro grau.";
+            } else {
+                // Calcula a raiz da equação
+                var raiz = -b / a;
+                resultado = "A raiz da equação " + a + "x + " + b + " = 0 é: x = " + raiz;
+            }
+
+            // Exibe o resultado
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cálculo da Raiz de uma Equação do Primeiro Grau</h1>
+    <label for="coeficienteA">Digite o coeficiente a:</label>
+    <input type="number" id="coeficienteA" required>
+    <br><br>
+    <label for="coeficienteB">Digite o coeficiente b:</label>
+    <input type="number" id="coeficienteB" required>
+    <br><br>
+    <button onclick="calcularRaiz()">Calcular Raiz</button>
+    <p id="resultado"></p>
+</body>
+</html>
