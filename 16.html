@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverter Número</title>
+    <script>
+        function inverterNumero() {
+            // Obtém o valor do input
+            var numero = document.getElementById("numero").value;
+
+            // Verifica se o número tem três algarismos
+            if (numero.length === 3 && !isNaN(numero)) {
+                // Inverte o número
+                var numeroInvertido = numero.split('').reverse().join('');
+                document.getElementById("resultado").innerText = "O invertido de " + numero + " é " + numeroInvertido;
+            } else {
+                document.getElementById("resultado").innerText = "Por favor, insira um número de três algarismos.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Inverter Número de Três Algarismos</h1>
+    <label for="numero">Digite um número de três algarismos:</label>
+    <input type="text" id="numero" maxlength="3">
+    <button onclick="inverterNumero()">Inverter</button>
+    <p id="resultado"></p>
+</body>
+</html>
