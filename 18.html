@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutação de Variáveis</title>
+    <script>
+        function permutarValores() {
+            // Obtém os valores das variáveis
+            var valorA = parseInt(document.getElementById("valorA").value);
+            var valorB = parseInt(document.getElementById("valorB").value);
+
+            // Verifica se os valores são números
+            if (isNaN(valorA) || isNaN(valorB)) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira valores válidos.";
+                return;
+            }
+
+            // Permuta os valores
+            var temp = valorA;
+            valorA = valorB;
+            valorB = temp;
+
+            // Exibe o resultado
+            document.getElementById("resultado").innerHTML = "Após a permutação:<br>Valor A: " + valorA + "<br>Valor B: " + valorB;
+        }
+    </script>
+</head>
+<body>
+    <h1>Permutação de Variáveis</h1>
+    <label for="valorA">Digite o valor da variável A:</label>
+    <input type="number" id="valorA" required>
+    <br><br>
+    <label for="valorB">Digite o valor da variável B:</label>
+    <input type="number" id="valorB" required>
+    <br><br>
+    <button onclick="permutarValores()">Permutar Valores</button>
+    <p id="resultado"></p>
+</body>
+</html>
